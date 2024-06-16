@@ -4,10 +4,11 @@ const products = document.querySelector('#products');
 // Fetch movie data from API
 
 const fetchMovies = async (movie) => {
-    const url = '/api'
+    const url = '/api?movie=star wars'
 
     const res = await fetch(url)
     const movies = await res.json();
+    console.log(movies)
 
     displayMovie(movies, products)
 }
@@ -37,7 +38,7 @@ const displayMovie = (movies, container) => {
         //     para2.className = "price white"
         // }
 
-        img.src = obj.poster_path;
+        img.src = `https://image.tmdb.org/t/p/w500${obj.poster_path}`;
         // img.alt = `Picture of ${obj.name}`;
         // header.textContent = obj.company;
         // para1.textContent = obj.name;
@@ -75,3 +76,6 @@ const displayMovie = (movies, container) => {
         
     })
 }
+
+fetchMovies();
+

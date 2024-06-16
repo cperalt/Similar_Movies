@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const url = require('url')
 
 require('dotenv').config()
 
@@ -34,7 +35,11 @@ const movieSimilar = async (id) => {
 
 router.get("/", async (req, res) => {
     try {
-        const id = await searchMovie('shrek');
+        const params = new URLSearchParams({
+            ...url.parse(req.url, true).query,
+        })
+        console.log(params.get('movie'))
+        const id = await searchMovie(params.get('movie'));
         const movies = await movieSimilar(id);
         res.json(movies) 
     } catch (error) {
