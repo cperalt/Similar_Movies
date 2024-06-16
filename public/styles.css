@@ -1,0 +1,60 @@
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    padding: 0;
+    margin: 0;
+    /* filter: invert(1); */
+}
+
+#main-product-page {
+    display: flex;
+    height: auto;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (min-width: 481px) {
+        margin-top: 2rem;
+    }
+}
+
+#products, #products2, #products3 {
+    display: grid;
+    position: relative;
+    width: fit-content;
+    grid-template-columns: repeat(1, 22.5rem);
+    column-gap: 4rem;
+    row-gap: 2rem;
+    padding: 20px 0;
+
+    @media only screen and (min-width: 481px){
+        grid-template-rows: repeat(6, 28.125rem);
+        grid-template-columns: repeat(2, 22.5rem);
+        padding: 0;
+        column-gap: 1.5rem;
+        row-gap: 2rem;
+    }
+
+    @media only screen and (min-width: 820px) {
+
+        column-gap: 5rem;
+        row-gap: 4rem;
+    }
+
+    @media only screen and (min-width: 1250px){
+        grid-template-rows: repeat(4, 28.125rem);
+        grid-template-columns: repeat(3, 22.5rem);
+        padding: 0;
+        row-gap: 4rem;
+    }
+
+
+}
+
+.card {
+    width: 22.5rem;
+    height: 28.125rem;
+    box-shadow: 4px 4px 12px #00000014;
+    border-radius: 18px;
+    position: relative;
+}
