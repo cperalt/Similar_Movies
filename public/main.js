@@ -10,9 +10,8 @@ const fetchMovies = async () => {
 
     const res = await fetch(url)
     const movies = await res.json();
-    // console.log(movies)
 
-    displayMovie(movies, products)
+    (movies.length == 0) ? alert(`"${searchMovie}" does not have similar movies. Refine your search to the exact movie title`) : displayMovie(movies, products) 
 }
 
 const displayMovie = (movies, container) => {
@@ -46,4 +45,5 @@ form.addEventListener('submit', (e) => {
     clear(products);
 
     fetchMovies();
+
 });
