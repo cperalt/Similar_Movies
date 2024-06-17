@@ -38,7 +38,7 @@ router.get("/", async (req, res) => {
         const params = new URLSearchParams({
             ...url.parse(req.url, true).query,
         })
-        console.log(params.get('movie'))
+        // console.log(params.get('movie'))
         const id = await searchMovie(params.get('movie'));
         const movies = await movieSimilar(id);
         res.json(movies) 

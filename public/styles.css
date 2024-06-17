@@ -58,3 +58,10 @@
     border-radius: 18px;
     position: relative;
 }
+
+.card_img {
+    width: 22.5rem;
+    height: 28.125rem;
+    border-radius: 18px;
+    box-shadow: 4px 4px 12px #00000014;
+}
